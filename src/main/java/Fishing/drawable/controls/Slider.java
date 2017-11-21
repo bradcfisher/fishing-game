@@ -105,6 +105,8 @@ public class Slider
      * Constructs a new instance.
      */
     public Slider() {
+        final Slider self = this;
+
         // Add default mouse listeners for dealing with custom hover behavior,
         // thumb dragging and clicks on the various portions of the control.
         getMouseListeners().addDefault(
@@ -137,7 +139,7 @@ public class Slider
                             // Start a timer triggering first in 500ms, then
                             // every 100ms thereafter which adjusts the value
                             // each time it fires.
-                            arrowTimer = ControlTimer.scheduleAtFixedRate(Slider::arrowTimerFired, 500, 100);
+                            arrowTimer = ControlTimer.scheduleAtFixedRate((evt) -> { self.arrowTimerFired(evt); }, 500, 100);
                             break;
 
                         case ITEM_BAR:
