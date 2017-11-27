@@ -32,7 +32,13 @@ Since this is a Maven project, it can also be built on the command line:
 
 `mvn package`
 
+The above command produces both an executable JAR and a native Windows executable wrapper.  To run the executable JAR, use the following command:
+
 `java -jar ./target/Fishing-1.0-SNAPSHOT-jar-with-dependencies.jar`
+
+The native Windows executable can be run with the following:
+
+`.\target\Fishing.exe`
 
 # License
 
